@@ -1,24 +1,21 @@
-// import 'dart:math';
-
 import 'package:json_annotation/json_annotation.dart';
-
-import 'package:flutter_understand_project/Main/app_home.dart';
-
+part 'lecture.g.dart'; 
 @JsonSerializable()
 class Lecture {
   String lectureName;
   List<String> images;
   String link;
+  String type;
 
   Lecture({
     required this.lectureName,
     required this.images,
     required this.link,
+    required this.type
   });
 
-  // // JSON → 객체
-  // factory Lecture.fromJson(Map<String, String> json) => _$UserFromJson(json);
+ factory Lecture.fromJson(Map<String, dynamic> json) => _$LectureFromJson(json);
+  Map<String, dynamic> toJson() => _$LectureToJson(this);
 
-  // // 객체 → JSON
-  // Map<String, String> toJson() => toJson()(this);
+  
 }

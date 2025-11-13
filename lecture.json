@@ -1,4 +1,6 @@
-{
+
+[
+    {
     "lectureName": "lectureName",
     "images": [
         "images/image_fitting/image_fitting.png",
@@ -8,5 +10,7 @@
         "images/image_fitting/image_fitting.png",
         "images/image_fitting/image_fitting.png"
     ],
-    "link": "/First"
-}
+    "link": "/First",
+    "type": "widget"
+    }
+]
