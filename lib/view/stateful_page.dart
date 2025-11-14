@@ -21,7 +21,7 @@ class _StatefulPageState extends State<StatefulPage> {
     double buttonWidth = screenSize.width * 0.35;
     
     return Scaffold(
-      appBar: CommonAppBar(message: "Stateful Page"),
+      appBar: CommonAppBar(title: "Stateful Page"),
       body: Center(
         child: ListView.builder(
           itemCount: widget._lectureList.length,

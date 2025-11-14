@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_understand_project/Common/common_app_bar.dart';
 import 'package:flutter_understand_project/model/lecture.dart';
+import 'package:get/get.dart';
 
 class WidgetPage extends StatefulWidget {
   // === Properties ===
@@ -20,7 +21,7 @@ class _WidgetPageState extends State<WidgetPage> {
     double expandedWidth = screenSize.width * 0.6;
     double buttonWidth = screenSize.width * 0.35;
     return Scaffold(
-      appBar: CommonAppBar(message: "Widget Page"),
+      appBar: CommonAppBar(title: "Widget Page"),
       body: Center(
         child: ListView.builder(
           itemCount: widget._lectureList.length,
@@ -56,7 +57,10 @@ class _WidgetPageState extends State<WidgetPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                print(widget._lectureList[index].link);
+                                Get.to(widget._lectureList[index].link);
+                              },
                               style: ElevatedButton.styleFrom(
                                 maximumSize: Size(buttonWidth, 50),
                               ),

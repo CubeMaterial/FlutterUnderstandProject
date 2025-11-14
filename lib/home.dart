@@ -33,7 +33,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
 
   Future<void> _loadLectures() async {
     try {
-      final jsonStr = await rootBundle.loadString('assets/lectures.json');
+      final jsonStr = await rootBundle.loadString('lectures.json');
       final List<dynamic> jsonList = jsonDecode(jsonStr);
 
       final lectures = jsonList
@@ -70,6 +70,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
           Tab(icon: Icon(Icons.widgets), text: "Stateful"),
         ],
         labelColor: Colors.blue,
+        indicatorColor: Colors.blue,
+        indicatorWeight: 2,
         unselectedLabelColor: Colors.grey,
         indicatorSize: TabBarIndicatorSize.label,
       ),
@@ -90,6 +92,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     return Center(
       child: TabBarView(
         controller: _tabController,
+        physics: NeverScrollableScrollPhysics(),
         children: [
           WidgetPage(lectureList: widgetLectures),
           StatelessPage(lectureList: statelessLectures),

@@ -19,7 +19,7 @@ class _StatelessPageState extends State<StatelessPage> {
     double expandedWidth = screenSize.width * 0.6;
     double buttonWidth = screenSize.width * 0.35;
     return Scaffold(
-      appBar: CommonAppBar(message: "Stateless Page"),
+      appBar: CommonAppBar(title: "Stateless Page"),
       body: Center(
         child: ListView.builder(
           itemCount: widget._lectureList.length,

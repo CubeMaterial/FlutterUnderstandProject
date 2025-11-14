@@ -1,0 +1,21 @@
+
+[
+    {
+    "lectureName": "lectureName",
+    "images": [
+        "images/image_fitting/image_fitting.png"
+       
+    ],
+    "link": "/Widget/Image",
+    "type": "widget"
+    },
+    {
+    "lectureName": "lectureName",
+    "images": [
+        "images/image_fitting/image_fitting.png",
+        "images/image_fitting/image_fitting.png"
+    ],
+    "link": "/Widget/Image_Fitting",
+    "type": "widget"
+    }
+]
