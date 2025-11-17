@@ -65,6 +65,7 @@ flutter:
   assets:
     - lectures.json
     - images/
+    - images/common/
     - images/image_fitting/
 
   #   - images/a_dot_ham.jpeg

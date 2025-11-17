@@ -59,7 +59,8 @@ class _WidgetPageState extends State<WidgetPage> {
                             ElevatedButton(
                               onPressed: () {
                                 print(widget._lectureList[index].link);
-                                Get.to(widget._lectureList[index].link);
+                                Get.toNamed(widget._lectureList[index].link);
+                                // Get.to(widget._lectureList[index].link);
                               },
                               style: ElevatedButton.styleFrom(
                                 maximumSize: Size(buttonWidth, 50),

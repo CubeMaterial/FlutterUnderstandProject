@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
        initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => Home()),
-        GetPage(name: '/Widget/Image', page: () =>WidgetImage()),
-        GetPage(name: '/Widget/Image_Fitting', page: () =>WidgetImageFitting()),
+        GetPage(name: '/Widget/Image', page: () => WidgetImage()),
+        GetPage(name: '/Widget/Image_Fitting', page: () => WidgetImageFitting()),
       ],
     );
   }
