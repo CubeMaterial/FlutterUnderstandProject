@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_understand_project/Common/common_app_bar.dart';
 
+// stateless
 // 위젯들을 세로로 세울 수 있는 위젯. children 안에 1개 이상의 위젯들을 넣을 수 있다.
 class WidgetColumn extends StatelessWidget {
   const WidgetColumn({super.key});

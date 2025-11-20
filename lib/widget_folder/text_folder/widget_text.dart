@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_understand_project/Common/common_app_bar.dart';
 
+// 텍스트 출력하는 위젯
 class WidgetText extends StatelessWidget {
   const WidgetText({super.key});
 

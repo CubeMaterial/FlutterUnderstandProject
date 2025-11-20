@@ -6,6 +6,7 @@ import 'package:flutter_understand_project/widget_folder/divider_folder/widget_d
 import 'package:flutter_understand_project/widget_folder/icon_button_folder/widget_icon_button.dart';
 import 'package:flutter_understand_project/widget_folder/image_fitting_foler/widget_image_fitting.dart';
 import 'package:flutter_understand_project/widget_folder/image_foler/widget_image.dart';
+import 'package:flutter_understand_project/widget_folder/navigator_folder/navigator_first_page.dart';
 import 'package:flutter_understand_project/widget_folder/row_folder/widget_row.dart';
 import 'package:flutter_understand_project/widget_folder/single_child_scroll_view_folder/widget_single_child_scroll_view.dart';
 import 'package:flutter_understand_project/widget_folder/sizebox_folder/widget_size_box.dart';
@@ -27,6 +28,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
       ),
        initialRoute: '/',
+
+       routes: {
+        '/' :(context)=>Home(),
+        '/Widget/NavigatorFirstPage' :(context)=>NavigatorFirstPage(),
+       },
+        
       getPages: [
         GetPage(name: '/', page: () => Home()),
         GetPage(name: '/Widget/Circle_Avatar', page: () => WidgetCircleAvatar()),

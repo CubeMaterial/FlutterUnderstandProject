@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_understand_project/Common/common_app_bar.dart';
 
+// stateless
 // 구분선 
 class WidgetDivider extends StatelessWidget {
   const WidgetDivider({super.key});

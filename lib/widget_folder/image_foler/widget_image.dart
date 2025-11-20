@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_understand_project/Common/common_app_bar.dart';
 
+// stateless
 // 이미지 파일 로드
 class WidgetImage extends StatelessWidget {
   const WidgetImage({super.key});

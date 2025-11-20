@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_understand_project/Common/common_app_bar.dart';
 
+// 스크롤. 
 class WidgetSingleChildScrollView extends StatelessWidget {
   const WidgetSingleChildScrollView({super.key});
 
