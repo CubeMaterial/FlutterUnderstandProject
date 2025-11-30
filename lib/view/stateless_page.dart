@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_understand_project/Common/common_app_bar.dart';
 import 'package:flutter_understand_project/model/lecture.dart';
+import 'package:get/get.dart';
 
 class StatelessPage extends StatefulWidget {
    // === Properties ===
@@ -19,7 +20,7 @@ class _StatelessPageState extends State<StatelessPage> {
     double expandedWidth = screenSize.width * 0.6;
     double buttonWidth = screenSize.width * 0.35;
     return Scaffold(
-      appBar: CommonAppBar(title: "Stateless Page"),
+      appBar: CommonAppBar(title: "Stateless Example"),
       body: Center(
         child: ListView.builder(
           itemCount: widget._lectureList.length,
@@ -55,7 +56,9 @@ class _StatelessPageState extends State<StatelessPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.toNamed(widget._lectureList[index].link);
+                             },
                               style: ElevatedButton.styleFrom(
                                 maximumSize: Size(buttonWidth, 50),
                               ),

@@ -66,7 +66,18 @@ flutter:
     - lectures.json
     - images/
     - images/common/
-    - images/image_fitting/
+    - images/common/animal/
+    - images/common/bmi/
+    - images/common/flower/
+    - images/common/lamp/
+    - images/common/lee/
+    - images/common/listview/
+    - images/common/nation/
+    - images/Stateless/
+    - images/Stateful/
+    - images/StatelessWidget/
+    - images/StatefulWidget/
+
 
   #   - images/a_dot_ham.jpeg
 

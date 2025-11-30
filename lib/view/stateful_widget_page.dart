@@ -3,26 +3,24 @@ import 'package:flutter_understand_project/Common/common_app_bar.dart';
 import 'package:flutter_understand_project/model/lecture.dart';
 import 'package:get/get.dart';
 
-class StatefulPage extends StatefulWidget {
-  // === Properties ===
+class StatefulWidgetPage extends StatefulWidget {
+    // === Properties ===
   final List<Lecture> _lectureList;
-
-  const StatefulPage({super.key, required List<Lecture> lectureList})
+  const StatefulWidgetPage({super.key, required List<Lecture> lectureList})
     : _lectureList = lectureList;
 
   @override
-  State<StatefulPage> createState() => _StatefulPageState();
+  State<StatefulWidgetPage> createState() => _StatefulWidgetPageState();
 }
 
-class _StatefulPageState extends State<StatefulPage> {
-  @override
+class _StatefulWidgetPageState extends State<StatefulWidgetPage> {
+ @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     double expandedWidth = screenSize.width * 0.6;
     double buttonWidth = screenSize.width * 0.35;
-    
     return Scaffold(
-      appBar: CommonAppBar(title: "Stateful Example"),
+      appBar: CommonAppBar(title: "Stateful Widget"),
       body: Center(
         child: ListView.builder(
           itemCount: widget._lectureList.length,
@@ -60,6 +58,7 @@ class _StatefulPageState extends State<StatefulPage> {
                             ElevatedButton(
                               onPressed: () {
                                 Get.toNamed(widget._lectureList[index].link);
+                                // Get.to(widget._lectureList[index].link);
                               },
                               style: ElevatedButton.styleFrom(
                                 maximumSize: Size(buttonWidth, 50),

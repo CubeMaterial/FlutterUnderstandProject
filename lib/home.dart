@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter_understand_project/model/lecture.dart';
 import 'package:flutter_understand_project/view/stateful_page.dart';
+import 'package:flutter_understand_project/view/stateful_widget_page.dart';
 import 'package:flutter_understand_project/view/stateless_page.dart';
-import 'package:flutter_understand_project/view/widget_page.dart';
+import 'package:flutter_understand_project/view/stateless_widget_page.dart';
 import 'package:flutter/services.dart';
 
 class Home extends StatefulWidget {
@@ -17,7 +18,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   late TabController _tabController;
 
   List<Lecture> allLectureList = [];
-  List<Lecture> widgetLectures = [];
+  List<Lecture> statelessWidgetLectures = [];
+  List<Lecture> statefulWidgetLectures = [];
   List<Lecture> statelessLectures = [];
   List<Lecture> statefulLectures = [];
 
@@ -27,7 +29,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
     _loadLectures();
   }
 
@@ -42,12 +44,14 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
 
       setState(() {
         allLectureList = lectures;
-        widgetLectures =
-            lectures.where((e) => e.type == 'widget').toList();
+        statelessWidgetLectures =
+            lectures.where((e) => e.type == 'StatelessWidget').toList();
+        statefulWidgetLectures =
+            lectures.where((e) => e.type == 'StatefulWidget').toList();
         statelessLectures =
-            lectures.where((e) => e.type == 'stateless').toList();
+            lectures.where((e) => e.type == 'Stateless').toList();
         statefulLectures =
-            lectures.where((e) => e.type == 'stateful').toList();
+            lectures.where((e) => e.type == 'Stateful').toList();
         isLoading = false;
       });
     } catch (e) {
@@ -56,6 +60,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         isLoading = false;
       });
     }
+
+    print('StatelessWidget Lectures: ${statelessWidgetLectures.length}');
+    print('StatefulWidget Lectures: ${statefulWidgetLectures.length}');
+    print('Stateless Lectures: ${statelessLectures.length}');
+    print('Stateful Lectures: ${statefulLectures.length}');
   }
 
   @override
@@ -65,7 +74,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
       bottomNavigationBar: TabBar(
         controller: _tabController,
         tabs: const [
-          Tab(icon: Icon(Icons.widgets), text: "Widget"),
+          Tab(icon: Icon(Icons.widgets), text: "Stateless Widget"),
+          Tab(icon: Icon(Icons.widgets), text: "Stateful Widget"),
           Tab(icon: Icon(Icons.widgets), text: "Stateless"),
           Tab(icon: Icon(Icons.widgets), text: "Stateful"),
         ],
@@ -94,7 +104,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         controller: _tabController,
         physics: NeverScrollableScrollPhysics(),
         children: [
-          WidgetPage(lectureList: widgetLectures),
+          StatelessWidgetPage(lectureList: statelessWidgetLectures),
+          StatefulWidgetPage(lectureList: statefulWidgetLectures),
           StatelessPage(lectureList: statelessLectures),
           StatefulPage(lectureList: statefulLectures),
         ],
